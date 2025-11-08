@@ -1,5 +1,4 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { CheckCircle2 } from "lucide-react";
 
 const insights = [
   "Guest Ordering: Most platforms didn't require account creation",
@@ -12,7 +11,7 @@ export const ResearchSection = () => {
   const { ref, isVisible } = useScrollAnimation(0.15);
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-16 px-6 border-t border-border">
       <div className="container max-w-6xl">
         <div 
           ref={ref}
@@ -20,30 +19,24 @@ export const ResearchSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Competitive Research & Learnings
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-3xl">
+          <p className="text-base text-muted-foreground leading-relaxed mb-8">
             A study across leading Southeast Asian STO solutions (TabSquare, Xilnex, Zeoniq, FeedMe) revealed clear patterns:
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="space-y-3 mb-8">
             {insights.map((insight, index) => (
-              <div 
-                key={index}
-                className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border"
-              >
-                <CheckCircle2 className="w-6 h-6 text-success flex-shrink-0 mt-1" />
-                <p className="text-lg font-medium">{insight}</p>
+              <div key={index} className="border-l-2 border-foreground pl-4">
+                <p className="text-sm">{insight}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-8 md:p-12">
-            <p className="text-lg leading-relaxed">
-              These insights formed the foundation for STO 2.0's redesign principles: <span className="font-semibold text-primary">reduce friction, improve efficiency, and enhance trust through social proof.</span>
-            </p>
-          </div>
+          <p className="text-base leading-relaxed">
+            These insights formed the foundation for STO 2.0's redesign principles: <span className="font-semibold">reduce friction, improve efficiency, and enhance trust through social proof.</span>
+          </p>
         </div>
       </div>
     </section>
