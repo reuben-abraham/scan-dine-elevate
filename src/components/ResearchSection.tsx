@@ -1,11 +1,14 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { CheckCircle, AlertTriangle } from "lucide-react";
+import TabSquareImg from "@/assets/Tabsquare.png";
+import XilnexImg from "@/assets/Xilnex.png";
+import FeedmeImg from "@/assets/Feedme.png";
 
 const competitors = [
   {
     name: "TabSquare",
-    image: "tabsquare.png",
+    image: TabSquareImg,
     strengths: [
       "Deep menu customization lets restaurants express their brand identity",
       "Strong recommendation & upselling nudges on menu",
@@ -17,7 +20,7 @@ const competitors = [
   },
   {
     name: "Xilnex",
-    image: "xilnex.png",
+    image: XilnexImg,
     strengths: [
       "Live order status tracking keeps staff and diners aligned."
     ],
@@ -28,7 +31,7 @@ const competitors = [
   },
   {
     name: "FeedMe",
-    image: "feedme.png",
+    image: FeedmeImg,
     strengths: [
       "Rich merchant profiles highlight story, hours, and operational detail.",
       "Semantic search and sorting help guests surface dishes fast.",
@@ -46,11 +49,10 @@ export const ResearchSection = () => {
   return (
     <section className="py-16 px-6 border-t border-border">
       <div className="container max-w-6xl">
-        <div 
+        <div
           ref={ref}
-          className={`transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          }`}
+          className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+            }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Competitive Research & Learnings
@@ -70,39 +72,39 @@ export const ResearchSection = () => {
                       key={index}
                       className="overflow-hidden hover:shadow-lg transition-shadow rounded-2xl min-w-[300px] md:min-w-[460px]"
                     >
-                    <div className="aspect-[16/9] bg-muted relative overflow-hidden">
-                      <img
-                        src={`/images/competitors/${competitor.image}`}
-                        alt={`${competitor.name} product screen`}
-                        className="h-full w-full object-cover"
-                        loading="lazy"
-                      />
-                      
-                    </div>
-                    <CardHeader className="pb-3">
-                      <h4 className="font-semibold text-lg">{competitor.name}</h4>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <ul className="space-y-2">
-                        {competitor.strengths.map((strength, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 flex-shrink-0 text-emerald-500 mt-0.5" />
-                            <span>{strength}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      {competitor.improvements.length > 0 && (
-                        <ul className="space-y-2 pt-3 border-t border-border/60">
-                          {competitor.improvements.map((improvement, idx) => (
+                      <div className="aspect-[16/9] bg-muted relative overflow-hidden">
+                        <img
+                          src={competitor.image}
+                          alt={`${competitor.name} product screen`}
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+
+                      </div>
+                      <CardHeader className="pb-3">
+                        <h4 className="font-semibold text-lg">{competitor.name}</h4>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <ul className="space-y-2">
+                          {competitor.strengths.map((strength, idx) => (
                             <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                              <AlertTriangle className="h-4 w-4 flex-shrink-0 text-amber-500 mt-0.5" />
-                              <span>{improvement}</span>
+                              <CheckCircle className="h-4 w-4 flex-shrink-0 text-emerald-500 mt-0.5" />
+                              <span>{strength}</span>
                             </li>
                           ))}
                         </ul>
-                      )}
-                    </CardContent>
-                  </Card>
+                        {competitor.improvements.length > 0 && (
+                          <ul className="space-y-2 pt-3 border-t border-border/60">
+                            {competitor.improvements.map((improvement, idx) => (
+                              <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                                <AlertTriangle className="h-4 w-4 flex-shrink-0 text-amber-500 mt-0.5" />
+                                <span>{improvement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </CardContent>
+                    </Card>
                   ))}
                 </div>
               </div>
@@ -114,7 +116,7 @@ export const ResearchSection = () => {
           <div className="mb-12 relative left-1/2 w-screen -translate-x-1/2">
             <div className="relative overflow-hidden h-[42rem] md:h-[48rem]">
               <img
-                src="/images/field-learnings-bg.jpg"
+                src={import.meta.env.BASE_URL + "images/field-learnings-bg.jpg"}
                 alt="Group ordering field learning backdrop"
                 className="absolute inset-0 h-full w-full object-cover object-center"
                 loading="lazy"
