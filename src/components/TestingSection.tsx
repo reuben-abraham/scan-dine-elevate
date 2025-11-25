@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { X, Bell } from "lucide-react";
+import UTGif from "@/assets/UT.gif";
 
 /* const findings = [
   {
@@ -29,19 +30,18 @@ export const TestingSection = () => {
   return (
     <section className="border-t border-border relative">
       {/* Background image container with 16:9 aspect ratio */}
-      <div 
+      <div
         className="w-full bg-cover bg-center bg-no-repeat relative"
         style={{
-          backgroundImage: "url('/src/assets/UT.gif')",
+          backgroundImage: `url(${UTGif})`,
           aspectRatio: "16/9"
         }}
       />
       <div className="container max-w-6xl px-6 relative -mt-[10%] pb-16">
-        <div 
+        <div
           ref={ref}
-          className={`transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          }`}
+          className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+            }`}
         >
           <Card className="bg-white">
             <CardContent className="p-6 md:p-8">
@@ -53,8 +53,8 @@ export const TestingSection = () => {
                 In-person usability testing and interviews with 12 participants
               </p>
 
-               {/* Vibecoded Prototype Callout */}
-               <Card className="bg-gradient-to-br from-primary/5 to-transparent">
+              {/* Vibecoded Prototype Callout */}
+              <Card className="bg-gradient-to-br from-primary/5 to-transparent">
                 <CardContent className="p-0">
                   <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
                     {/* Left side - Header + Content (60% width) */}
@@ -70,8 +70,8 @@ export const TestingSection = () => {
                         <p className="text-base leading-relaxed">
                           To validate the communal basket concept, we built a scrappy backend prototype that simulated multiple users interacting with a shared basket in real-time. This allowed us to test how users would interact with the shared basket and how it would affect the overall ordering process.
                         </p>
-                       
-                        <Button 
+
+                        <Button
                           onClick={() => {
                             setShowNotification(true);
                             setTimeout(() => setShowNotification(false), 5000);
@@ -85,10 +85,10 @@ export const TestingSection = () => {
                     </div>
                     {/* Right side - Iframe (40% width) */}
                     <div className="md:col-span-2 p-6 relative">
-                      <div 
+                      <div
                         className="rounded-lg border border-border overflow-hidden relative"
-                        style={{ 
-                          aspectRatio: "375/812", 
+                        style={{
+                          aspectRatio: "375/812",
                           maxHeight: "812px",
                           width: "100%"
                         }}
@@ -123,41 +123,41 @@ export const TestingSection = () => {
               <div className="mb-8 mt-12">
                 <h3 className="text-lg font-semibold mb-4 uppercase tracking-wider">Key Findings</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                        <Card className="border-l-4 border-l-green-500">
-                          <CardContent className="pt-4">
-                            <p className="text-sm">
-                              <span className="font-semibold">Core Flow:</span> Core flow was smooth and intuitive, with no major issues, users were able to navigate the flow quickly and easily.
-                            </p>
-                          </CardContent>
-                        </Card>
-                        <Card className="border-l-4 border-l-green-500">
-                          <CardContent className="pt-4">
-                            <p className="text-sm">
-                              <span className="font-semibold">Shared Basket:</span> Users liked seeing others items in the basket and being able to modify them in real-time. It worked best in group settings like family or close friends.
-                            </p>
-                          </CardContent>
-                        </Card>
-                      </div>
+                  <Card className="border-l-4 border-l-green-500">
+                    <CardContent className="pt-4">
+                      <p className="text-sm">
+                        <span className="font-semibold">Core Flow:</span> Core flow was smooth and intuitive, with no major issues, users were able to navigate the flow quickly and easily.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-l-4 border-l-green-500">
+                    <CardContent className="pt-4">
+                      <p className="text-sm">
+                        <span className="font-semibold">Shared Basket:</span> Users liked seeing others items in the basket and being able to modify them in real-time. It worked best in group settings like family or close friends.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <Card className="border-l-4 border-l-amber-500">
-                          <CardContent className="pt-4">
-                            <p className="text-sm">
-                              <span className="font-semibold">Item Attribution:</span> Users wanted to know who ordered what in the shared basket to ensure there's no confusion around who owes what.
-                            </p>
-                          </CardContent>
-                        </Card>
-                        <Card className="border-l-4 border-l-red-500">
-                          <CardContent className="pt-4">
-                            <p className="text-sm">
-                              <span className="font-semibold">Payment:</span> Users were unclear on when they were supposed to pay and who is supposed to pay how much.
-                            </p>
-                          </CardContent>
-                        </Card>
-                      </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <Card className="border-l-4 border-l-amber-500">
+                    <CardContent className="pt-4">
+                      <p className="text-sm">
+                        <span className="font-semibold">Item Attribution:</span> Users wanted to know who ordered what in the shared basket to ensure there's no confusion around who owes what.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-l-4 border-l-red-500">
+                    <CardContent className="pt-4">
+                      <p className="text-sm">
+                        <span className="font-semibold">Payment:</span> Users were unclear on when they were supposed to pay and who is supposed to pay how much.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
 
-             
+
             </CardContent>
           </Card>
         </div>

@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import ContextImg from "@/assets/Context.png";
 
 export const ProblemSection = () => {
   const { ref, isVisible } = useScrollAnimation(0.15);
@@ -6,11 +7,10 @@ export const ProblemSection = () => {
   return (
     <section className="py-12 px-6 border-t border-border">
       <div className="container max-w-6xl">
-        <div 
+        <div
           ref={ref}
-          className={`grid md:grid-cols-2 gap-12 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          }`}
+          className={`grid md:grid-cols-2 gap-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+            }`}
         >
           <div>
             <h2 className="text-2xl font-bold mb-4">
@@ -52,7 +52,7 @@ export const ProblemSection = () => {
           </div>
 
           <div className="flex items-center justify-center">
-            <img src="/src/assets/Context.png" alt="Context: STO 1.0" className="max-w-full h-auto" />
+            <img src={ContextImg} alt="Context: STO 1.0" className="max-w-full h-auto" />
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import { Play, ArrowLeft, ArrowRight } from "lucide-react";
+import STO2Img from "@/assets/STO2.png";
 
 type BeforeAfterSlide = {
   title: string;
@@ -21,16 +22,16 @@ const slides: BeforeAfterSlide[] = [
     description: "Scanning QR lands users directly-to-menu with items exposed reduces time to first action.",
     beforeLabel: "Landing page → Menu",
     afterLabel: "Scan → Menu (categories + search)",
-    beforeImage: "/STO1Landing.png",
-    afterImage: "/STO2Menu.png"
+    beforeImage: import.meta.env.BASE_URL + "STO1Landing.png",
+    afterImage: import.meta.env.BASE_URL + "STO2Menu.png"
   },
   {
     title: "Rich Menu",
     description: "Visual categories and upfront search bar reduces time to first action.",
     beforeLabel: "Login required",
     afterLabel: "Guest checkout + optional login",
-    beforeImage: "/STO1Menu.png",
-    afterImage: "/STO2Menu.png"
+    beforeImage: import.meta.env.BASE_URL + "STO1Menu.png",
+    afterImage: import.meta.env.BASE_URL + "STO2Menu.png"
   },
   {
     title: "Group ordering",
@@ -43,16 +44,16 @@ const slides: BeforeAfterSlide[] = [
     ),
     beforeLabel: "Individual baskets",
     afterLabel: "Communal basket + smart invoice",
-    beforeImage: "/STO1Basket.png",
-    afterImage: "/STO2Basket.png"
+    beforeImage: import.meta.env.BASE_URL + "STO1Basket.png",
+    afterImage: import.meta.env.BASE_URL + "STO2Basket.png"
   },
   {
     title: "Unobtrusive Loyalty & Deals",
     description: "Your deals and loyalty program nudges don't distract you from the ordering flow. However, most users are likely to check the bill before proceeding to pay and here's where we prominently show your rewards and deals.",
     beforeLabel: "Login required",
     afterLabel: "Guest checkout + optional login",
-    beforeImage: "/STO1Bill.png",
-    afterImage: "/STO2Bill.png"
+    beforeImage: import.meta.env.BASE_URL + "STO1Bill.png",
+    afterImage: import.meta.env.BASE_URL + "STO2Bill.png"
   }
 ];
 
@@ -123,7 +124,7 @@ export const SolutionSection = () => {
         const rect = el.getBoundingClientRect();
         setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
       }}
-      onClick={(e) => { 
+      onClick={(e) => {
         // Only open if modal is closed, click is not from a button, and we didn't just close it
         if (!open && !(e.target as HTMLElement).closest('button') && !justClosedRef.current) {
           setOpen(true);
@@ -137,11 +138,10 @@ export const SolutionSection = () => {
       }}
     >
       <div className="container max-w-6xl">
-        <div 
+        <div
           ref={ref}
-          className={`group relative transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          }`}
+          className={`group relative transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+            }`}
         >
           <div className="p-6 md:p-8 min-h-[28rem]">
             {/* Summary + mockup right */}
@@ -179,9 +179,9 @@ export const SolutionSection = () => {
                 </div>
               </div>
               <div className="md:col-span-2 flex items-start">
-                <img 
-                  src="/src/assets/STO2.png" 
-                  alt="Design Evolution Mock" 
+                <img
+                  src={STO2Img}
+                  alt="Design Evolution Mock"
                   className="w-full h-auto object-contain"
                 />
               </div>
@@ -209,9 +209,9 @@ export const SolutionSection = () => {
                                 <div className="absolute top-2 left-2 bg-black/80 text-white text-xs font-semibold px-2 py-1 rounded z-10">
                                   BEFORE
                                 </div>
-                                <img 
-                                  src={slide.beforeImage || "/placeholder.svg"} 
-                                  alt="Before screen" 
+                                <img
+                                  src={slide.beforeImage || "/placeholder.svg"}
+                                  alt="Before screen"
                                   className="w-full h-full object-cover"
                                 />
                               </div>
@@ -219,9 +219,9 @@ export const SolutionSection = () => {
                                 <div className="absolute top-2 left-2 bg-black/80 text-white text-xs font-semibold px-2 py-1 rounded z-10">
                                   AFTER
                                 </div>
-                                <img 
-                                  src={slide.afterImage || "/placeholder.svg"} 
-                                  alt="After screen" 
+                                <img
+                                  src={slide.afterImage || "/placeholder.svg"}
+                                  alt="After screen"
                                   className="w-full h-full object-cover"
                                 />
                               </div>
@@ -288,7 +288,7 @@ export const SolutionSection = () => {
         </div>
       </div>
       {/* Floating follow-cursor button positioned relative to the section (matches cursorPos space) */}
-      <Button 
+      <Button
         variant="default"
         className={`pointer-events-none absolute z-20 rounded-full gap-2 bg-white text-black ${hovering ? "opacity-100" : "opacity-0"} transition-opacity`}
         style={{ left: `${cursorPos.x + 8}px`, top: `${cursorPos.y + 8}px` }}
