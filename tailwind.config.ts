@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'display': ['Stack Sans Headline', 'sans-serif'],
+        'body': ['Inter', 'sans-serif'],
+        'serif': ['Stack Sans Headline', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

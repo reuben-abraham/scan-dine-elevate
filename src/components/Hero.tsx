@@ -19,7 +19,7 @@ export const Hero = () => {
           Grab Scan To Order 2.0
         </h1>
         <p className="text-lg text-muted-foreground">
-          Elevating the In-Store Experience
+          Elevating the In-Store Dining Experience
         </p>
       </div>
     </section>

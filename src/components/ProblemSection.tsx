@@ -21,26 +21,24 @@ export const ProblemSection = () => {
             </p>
 
             <h3 className="text-xl font-bold mb-4">What Went Wrong</h3>
-            
             <div className="space-y-6">
               <div className="border-l-2 border-foreground pl-4">
-                <h4 className="font-semibold mb-1">No POS Integration</h4>
-                <p className="text-sm text-muted-foreground">
-                  Cashiers manually re-entered orders, causing delays, errors, and reconciliation nightmares for merchants.
-                </p>
-              </div>
-
-              <div className="border-l-2 border-foreground pl-4">
-                <h4 className="font-semibold mb-1">High Drop-Off Rates <span className="text-lg font-bold">54%</span></h4>
-                <p className="text-sm text-muted-foreground">
-                  of users abandoned orders during account verification. The login wall was killing conversion.
+                <h4 className="font-semibold mb-1">54% User Drop-Off </h4>
+                <p className="text-sm text-muted-foreground"> Majoritycof users abandoned orders during account verification. The login wall was killing conversion.
                 </p>
               </div>
 
               <div className="border-l-2 border-foreground pl-4">
                 <h4 className="font-semibold mb-1">Feature Gaps</h4>
                 <p className="text-sm text-muted-foreground">
-                  No takeaway options, guest ordering, or seamless loyalty integration. Competitors offered all of these.
+                  No takeaway options, guest ordering, or payment method localisation. Competitors offered all of these.
+                </p>
+              </div>
+
+              <div className="border-l-2 border-foreground pl-4">
+                <h4 className="font-semibold mb-1">No POS Integration</h4>
+                <p className="text-sm text-muted-foreground">
+                  Cashiers manually re-entered orders, causing delays, errors, and reconciliation nightmares for merchants.
                 </p>
               </div>
 
@@ -53,10 +51,8 @@ export const ProblemSection = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center bg-muted">
-            <div className="text-center text-muted-foreground p-12">
-              [Mockup Space]
-            </div>
+          <div className="flex items-center justify-center">
+            <img src="/src/assets/Context.png" alt="Context: STO 1.0" className="max-w-full h-auto" />
           </div>
         </div>
       </div>
